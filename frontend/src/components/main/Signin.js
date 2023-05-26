@@ -45,125 +45,81 @@ const Signin = () => {
     }
   }
 
-
-
-
   return (
-    <div>
-      <section className="vh-100">
-        <div className="container py-5 h-100">
-          <div className="row d-flex align-items-center justify-content-center h-100">
-            <div className="col-md-8 col-lg-7 col-xl-6">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                className="img-fluid"
-                alt="Phone image"
-              />
-            </div>
+    <div style={{ backgroundColor: "" }}>
 
-            <Formik
-              initialValues={{ name: '', email: '', password: '' }}
-              onSubmit={signinForm}>
-              {({ values, handleSubmit, handleChange }) => (
-                <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                  <form onSubmit={handleSubmit}>
-                    {/* Email input */}
-                    <div className=" mb-4">
-                      <input
-                        type="text"
-                        id="name"
-                        className="form-control form-control-lg"
-                        value={values.name}
-                        onChange={values.handleChange}
-                      />
-                      <label className="form-label" htmlFor="form1Example13">
-                        Name
-                      </label>
-                    </div>
-                    {/* Password input */}
-                    <div className=" mb-4">
-                      <input
-                        type="email"
-                        id="email"
-                        className="form-control form-control-lg"
-                        value={values.email}
-                        onChange={values.handleChange}
-
-                      />
-                      <label className="form-label" htmlFor="form1Example23">
-                        Email
-                      </label>
-                    </div>
-                    <div className=" mb-4">
-                      <input
-                        type="password"
-                        id="password"
-                        className="form-control form-control-lg"
-                        value={values.password}
-                        onChange={values.handleChange}
-
-                      />
-                      <label className="form-label" htmlFor="form1Example23">
-                        Password
-                      </label>
-                    </div>
-                    <div className="d-flex justify-content-around align-items-center mb-4">
-                      {/* Checkbox */}
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          defaultValue=""
-                          id="form1Example3"
-                          defaultChecked=""
-                        />
-                        <label className="form-check-label" htmlFor="form1Example3">
-                          {" "}
-                          Remember me{" "}
-                        </label>
-                      </div>
-                      <a href="#!">Forgot password?</a>
-                    </div>
-                    {/* Submit button */}
-                    <button type="submit" className="btn btn-primary btn-lg btn-block">
-                      Sign in
-                    </button>
-                    <div className="divider d-flex align-items-center my-4">
-                      <p className="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-                    </div>
-                    <a
-                      className="btn btn-primary btn-lg btn-block"
-                      style={{ backgroundColor: "#3b5998" }}
-                      href="#!"
-                      role="button"
-                    >
-                      <i className="fab fa-facebook-f me-2" />
-                      Continue with Facebook
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div
+              className="card bg-dark text-white"
+              style={{ borderRadius: "1rem" }}
+            >
+              <div className="card-body p-5 text-center">
+                <div className="mb-md-5 mt-md-4 pb-5">
+                  <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
+                  <p className="text-white-50 mb-5">
+                    Please enter your login and password!
+                  </p>
+                  <div className="form-outline form-white mb-4">
+                    <input
+                      type="email"
+                      id="typeEmailX"
+                      className="form-control form-control-lg"
+                    />
+                    <label className="form-label" htmlFor="typeEmailX">
+                      Email
+                    </label>
+                  </div>
+                  <div className="form-outline form-white mb-4">
+                    <input
+                      type="password"
+                      id="typePasswordX"
+                      className="form-control form-control-lg"
+                    />
+                    <label className="form-label" htmlFor="typePasswordX">
+                      Password
+                    </label>
+                  </div>
+                  <p className="small mb-5 pb-lg-2">
+                    <a className="text-white-50" href="#!">
+                      Forgot password?
                     </a>
-                    <a
-                      className="btn btn-primary btn-lg btn-block"
-                      style={{ backgroundColor: "#55acee" }}
-                      href="#!"
-                      role="button"
-                    >
-                      <i className="fab fa-twitter me-2" />
-                      Continue with Twitter
+                  </p>
+                  <button
+                    className="btn btn-outline-light btn-lg px-5"
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                  <div className="d-flex justify-content-center text-center mt-4 pt-1">
+                    <a href="#!" className="text-white">
+                      <i className="fab fa-facebook-f fa-lg" />
                     </a>
-                  </form>
+                    <a href="#!" className="text-white">
+                      <i className="fab fa-twitter fa-lg mx-4 px-2" />
+                    </a>
+                    <a href="#!" className="text-white">
+                      <i className="fab fa-google fa-lg" />
+                    </a>
+                  </div>
                 </div>
-              )}
-            </Formik>
-
-
-
-
-
+                <div>
+                  <p className="mb-0">
+                    Don't have an account?{" "}
+                    <a href="#!" className="text-white-50 fw-bold">
+                      Sign Up
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
+      </div>
     </div>
   )
+
 }
 
 export default Signin
