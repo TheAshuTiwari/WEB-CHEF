@@ -10,6 +10,8 @@ import User from "./components/user";
 import UserProfile from "./components/user/UserProfile";
 import AdminProfile from "./components/admin/AdminProfile";
 import NotFound from "./components/NotFound";
+import Contact from "./components/main/Contact";
+import About from "./components/main/About";
 import AdminAuth from "./auth/AdminAuth";
 import UserProvider from "./context/UserProvider";
 import AdminProvider from "./context/AdminProvider";
@@ -45,6 +47,8 @@ function App() {
               <Route element={<Home />} path="home" />
               <Route element={<Signin />} path="signin" />
               <Route element={<Signup />} path="signup" />
+              <Route element={<Contact />} path="contact" />
+              <Route element={<About />} path="about" />
             </Route>
 
             <Route
