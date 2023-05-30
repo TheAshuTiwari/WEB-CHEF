@@ -56,6 +56,7 @@ const Signin = () => {
               style={{ borderRadius: "1rem" }}
             >
               <div className="card-body p-5 text-center">
+                <form onSubmit={signinForm.handleSubmit}></form>
                 <div className="mb-md-5 mt-md-4 pb-5">
                   <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
                   <p className="text-white-50 mb-5">

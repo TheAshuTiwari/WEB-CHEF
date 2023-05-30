@@ -9,11 +9,12 @@ const Signup = () => {
   const url = app_config.apiurl
 
   const signupForm = async (formdata, { resetForm }) => {
+    console.log(formdata);
     const res = await fetch(`${url}/user/add`, {
       method: 'POST',
       body: JSON.stringify(formdata),
       headers: {
-        'Content-Type': 'application-json'
+        'Content-Type': 'application/json'
       }
     })
     if (res.status === 200) {
