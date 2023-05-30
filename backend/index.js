@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const userRouter = require('./routers/userRouter');
+const imageRouter = require('./routers/imagerouter');
+const utilRouter = require('./routers/util');
 const cors = require('cors');
 const { PORT } = require('./config');
 
@@ -17,11 +19,13 @@ app.use(cors(
 app.use(express.json());
 // app.use(express.urlencoded({extended : true}));
 app.use('/user', userRouter);
+app.use('/image', imageRouter);
+app.use('/util', utilRouter);
 
 
 app.get('/', (req, res) => {
     console.log('Request at index');
     res.status(299).send('Working Perfectly!!');
-})
+});
 
 app.listen(PORT, () => console.log(`Express server has started at ${PORT}`));
