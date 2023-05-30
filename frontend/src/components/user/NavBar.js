@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import app_config from "../../config";
-import { useUserContext } from "../../context/UserProvider";
+import Logo from "../Logo";
 
-const Header = () => {
-  const { loggedin, setLoggedin, logout } = useUserContext();
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(sessionStorage.getItem("user"))
-  );
-  const url = app_config.apiurl;
+const Navbar = () => {
 
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         {/* Container wrapper */}
-        <div className="container">
+        <div className="container-fluid">
           {/* Toggle button */}
           <button
             className="navbar-toggler"
@@ -31,14 +25,9 @@ const Header = () => {
           {/* Collapsible wrapper */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/* Navbar brand */}
-            <a className="navbar-brand mt-2 mt-lg-0" href="#">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-              height={15}
-              alt="MDB Logo"
-              loading="lazy"
-            />
-            </a>
+            <NavLink className="navbar-brand my-auto" to="/main/home">
+              <Logo title={'Web Chef'} />
+            </NavLink>
             {/* Left links */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -46,28 +35,19 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
-              {loggedin && (
-                <>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/main/signup">
-                      Signup
-                    </NavLink>
-                  </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/main/login">
-                      Login
-                    </NavLink>
-                  </li>
-                </>
-              )}
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/browse">
-                  Browse
+                <NavLink className="nav-link" to="/main/login">
+                  Login
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/user/manageorders">
-                  ManageOrders
+                <NavLink className="nav-link" to="/main/signup">
+                  Signup
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/main/browse">
+                  Browse Equipments
                 </NavLink>
               </li>
             </ul>
@@ -76,6 +56,8 @@ const Header = () => {
           {/* Collapsible wrapper */}
           {/* Right elements */}
           <div className="d-flex align-items-center">
+            
+
             {/* Avatar */}
             <div className="dropdown">
               <a
@@ -88,8 +70,8 @@ const Header = () => {
               >
                 <img
                   src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                  class="rounded-circle"
-                  height="25"
+                  className="rounded-circle"
+                  height={25}
                   alt="Black and White Portrait of a Man"
                   loading="lazy"
                 />
@@ -99,15 +81,19 @@ const Header = () => {
                 aria-labelledby="navbarDropdownMenuAvatar"
               >
                 <li>
-                  <NavLink className="dropdown-item" to="/user/profile">
+                  <a className="dropdown-item" href="#">
                     My profile
-                  </NavLink>
+                  </a>
                 </li>
-
                 <li>
-                  <button onClick={logout} className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="#">
+                    Settings
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
                     Logout
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -121,4 +107,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
