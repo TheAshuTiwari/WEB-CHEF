@@ -50,6 +50,11 @@ const Navbar = () => {
                   Browse Equipments
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/user/generatedesign">
+                  Manage Mockups
+                </NavLink>
+              </li>
             </ul>
             {/* Left links */}
           </div>
