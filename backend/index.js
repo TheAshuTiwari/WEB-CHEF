@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const userRouter = require('./routers/userRouter');
-const imageRouter = require('./routers/imagerouter');
+const mockupRouter = require('./routers/mockuprouter');
 const utilRouter = require('./routers/util');
 const cors = require('cors');
 const { PORT } = require('./config');
@@ -19,7 +19,7 @@ app.use(cors(
 app.use(express.json());
 // app.use(express.urlencoded({extended : true}));
 app.use('/user', userRouter);
-app.use('/image', imageRouter);
+app.use('/mockup', mockupRouter);
 app.use('/util', utilRouter);
 
 app.use(express.static('./static/uploads'));
