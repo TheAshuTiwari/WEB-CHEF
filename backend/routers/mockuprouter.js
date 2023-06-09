@@ -1,4 +1,4 @@
-const Model = require('../models/imageModel');
+const Model = require('../models/mockupModel');
 const { Router } = require('express');
 const router = Router();
 

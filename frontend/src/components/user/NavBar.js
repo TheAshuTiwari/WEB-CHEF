@@ -56,7 +56,7 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           {/* Right elements */}
           <div className="d-flex align-items-center">
-            
+
 
             {/* Avatar */}
             <div className="dropdown">

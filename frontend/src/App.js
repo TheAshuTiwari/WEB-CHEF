@@ -16,6 +16,7 @@ import AdminAuth from "./auth/AdminAuth";
 import UserProvider from "./context/UserProvider";
 import AdminProvider from "./context/AdminProvider";
 import { useState } from "react";
+import DesignGenerator from "./components/user/DesignGenerator";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(
@@ -60,6 +61,7 @@ function App() {
               path="user"
             >
               <Route path="profile" element={<UserProfile />} />
+              <Route path="generatedesign" element={<DesignGenerator />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
