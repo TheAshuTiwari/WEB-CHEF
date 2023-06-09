@@ -8,7 +8,7 @@ const UserProfile = () => {
     JSON.parse(sessionStorage.getItem("user"))
   );
 
-  const url = app_config.apiUrl;
+  const url = app_config.apiurl;
   const {themeColorLight} = app_config;
   const [passwordHidden, setPasswordHidden] = useState(true);
 

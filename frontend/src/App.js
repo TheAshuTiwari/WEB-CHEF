@@ -16,6 +16,7 @@ import AdminAuth from "./auth/AdminAuth";
 import UserProvider from "./context/UserProvider";
 import AdminProvider from "./context/AdminProvider";
 import { useState } from "react";
+import ManageImages from "./components/user/ManageImages";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(
@@ -60,6 +61,7 @@ function App() {
               path="user"
             >
               <Route path="profile" element={<UserProfile />} />
+              <Route path="manageimages" element={<ManageImages />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

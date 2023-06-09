@@ -28,6 +28,7 @@ router.get('/getall', (req, res) => {
         res.status(500).json(err);
     });
 });
+
 router.post('/authenticate', (req, res) => {
     Model.findOne(req.body)
     .then((result) => {
@@ -38,8 +39,18 @@ router.post('/authenticate', (req, res) => {
     .catch((err) => {
         console.error(err);
         res.status(500).json(err);
-        
+    });
+})
 
+router.delete('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+    .then((result) => {
+        if(result) res.json(result);
+        else res.status(401).json({ message: 'Invalid Credentials'});
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
     });
 })
 

@@ -3,8 +3,6 @@ import app_config from '../../config'
 import { Formik } from 'formik'
 import Swal from 'sweetalert2'
 
-
-
 const Signup = () => {
   const url = app_config.apiurl
 
@@ -17,6 +15,7 @@ const Signup = () => {
         'Content-Type': 'application/json'
       }
     })
+    console.log(res.status);
     if (res.status === 200) {
       Swal.fire({
         icon: 'success',
