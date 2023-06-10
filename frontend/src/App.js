@@ -54,9 +54,9 @@ function App() {
 
             <Route
               element={
-                <UserAuth>
+               // <UserAuth>
                   <User />
-                </UserAuth>
+                //</UserAuth>
               }
               path="user"
             >
