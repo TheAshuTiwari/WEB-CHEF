@@ -2,9 +2,12 @@ import React from 'react'
 import app_config from '../../config'
 import { Formik } from 'formik'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
   const url = app_config.apiurl
+
+  const navigate = useNavigate()
 
   const signupForm = async (formdata, { resetForm }) => {
     console.log(formdata);
@@ -18,7 +21,7 @@ const Signup = () => {
     
     console.log(res.status);
 
-    if (res.status === 200) {
+    if (res.status === 201) {
       Swal.fire({
         icon: 'success',
         title: 'Success',
@@ -26,6 +29,7 @@ const Signup = () => {
       })
       const data = await res.json();
       console.log(data)
+      navigate('/main/signin');
 
     }
   }
