@@ -22,12 +22,7 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {/* Navbar brand */}
           <a className="navbar-brand mt-2 mt-lg-0" href="#">
-            <img
-              src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
-              height={15}
-              alt="MDB Logo"
-              loading="lazy"
-            />
+            <h2 className="text-white">WebChef</h2>
           </a>
           {/* Left links */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -44,6 +39,11 @@ const Header = () => {
             <li className="nav-item">
               <NavLink className="nav-link" to="/main/contact">
                 Contact
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/user/generatedesign">
+                Generate Design
               </NavLink>
             </li>
           </ul>

@@ -2,12 +2,20 @@ import React, { useEffect, useState } from 'react';
 import app_config from '../../config';
 
 const DesignGenerator = () => {
-  const [selMockup, setSelMockup] = useState(null);
   const url = app_config.apiurl;
+
+  const { webpages } = app_config;
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
+  const [selImage, setSelImage] = useState('');
+
+  const [loading, setLoading] = useState(false);
+
+  const [result, setResult] = useState('');
+
   const [mockupList, setMockupList] = useState([]);
+
   const saveMockup = async () => {
     const res = await fetch(url + '/mockup/add', {
       method: 'POST',
@@ -18,7 +26,30 @@ const DesignGenerator = () => {
   };
 
   const uploadFile = (e) => {
+    setLoading(true);
     const file = e.target.files[0];
+    setTimeout(() => {
+      if(file.name === 'Capture1.png') {
+        setResult(webpages.page1)
+      }else if(file.name === 'Capture2.png') {
+        setResult(webpages.page2)
+      }
+      setLoading(false);
+    }, 1000);
+    
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var image = new Image(); // Create an <img> element
+      image.src = e.target.result; // Set the source to the file contents
+      setSelImage(e.target.result);
+
+      // var imageContainer = document.getElementById('imageContainer');
+      // imageContainer.innerHTML = ''; // Clear the container
+      // imageContainer.appendChild(image); // Append the image to the container
+    };
+
+    reader.readAsDataURL(file); // Read the file as a data URL
+
     const fd = new FormData();
     fd.append('myfile', file);
     fetch(url + '/util/uploadfile', {
@@ -65,17 +96,39 @@ const DesignGenerator = () => {
   return (
     <div>
       <div className="container">
+        <div
+          style={{
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            height: '500px',
+            backgroundImage: `url('https://www.searchenginejournal.com/wp-content/uploads/2020/01/which-web-design-platform-is-right-for-you-5e4d59fb941b9.png')`
+          }}
+        ></div>
         <div className="card">
           <div className="card-header">
             <h4>Upload Your Mockup</h4>
           </div>
           <div className="card-body">
-            <input type="file" onChange={uploadFile} />
+            <input type="file" onChange={uploadFile} className="form-control mb-4" />
+            <div className="row">
+              <div className="col-md-6">{selImage && <img className="img-fluid" src={selImage} alt="" />}</div>
+              <div className="col-md-6">
+                {loading && <img style={{ display: 'block', margin: 'auto' }} alt="" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" />}
+                {
+                  result && <p>{result}</p>
+                }
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="card">
-          <div className="card-body">{displayMockups()}</div>
+          <div className="card-body">
+            <div className="row">
+              <div className="col-md-6">{displayMockups()}</div>
+              <div className="col-md-6"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
