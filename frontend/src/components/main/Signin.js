@@ -81,7 +81,7 @@ const Signin = () => {
                         Forgot password?
                       </a>
                     </p>
-                    <button className="btn btn-outline-light btn-lg px-5" type="submit">
+                    <button className="btn btn-outline-primary btn-lg px-5" type="submit">
                       Login
                     </button>
                     <div className="d-flex justify-content-center text-center mt-4 pt-1">
