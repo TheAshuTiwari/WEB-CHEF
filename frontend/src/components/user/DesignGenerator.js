@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import app_config from '../../config';
 
 const DesignGenerator = () => {
-  const [selMockup, setSelMockup] = useState(null);
+  
   const url = app_config.apiurl;
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
