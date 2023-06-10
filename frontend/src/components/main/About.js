@@ -16,25 +16,8 @@ const About = () => {
   </header>
 
   <section>
-    <h2>Our Company</h2>
-    <p>
-      Welcome to our company! We are a leading provider of innovative solutions
-      in the industry. With a team of dedicated professionals, we strive to
-      deliver exceptional products and services to our clients.
-    </p>
-    <h2>Our Mission</h2>
-    <p>
-      Our mission is to exceed customer expectations by providing high-quality
-      products and exceptional customer service. We are committed to
-      continuously improving our offerings and staying at the forefront of
-      technology.
-    </p>
-    <h2>Our Team</h2>
-    <p>
-      We have a talented and diverse team of professionals who bring their
-      expertise to every project. Our team is passionate about what they do and
-      works together to achieve our goals.
-    </p>
+    <h4>Welcome to our AI Webpage Builder project! We simplify website creation using cutting-edge technology. Our mission is to empower individuals and businesses with an effortless online presence. With our AI-powered builder, create stunning websites in minutes, no coding required. Our advanced algorithms ensure visually appealing and optimized websites. We value feedback and continuously improve our platform to meet industry standards. Join us on this journey to revolutionize website creation. Start building your dream website today and unleash your creativity. Explore our website, try our AI Webpage Builder, and reach out for support.</h4>
+    <br></br>
     <h2>Why Choose Us</h2>
     <ul>
       <li>Experienced professionals</li>

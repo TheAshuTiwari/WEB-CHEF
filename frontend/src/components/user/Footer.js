@@ -44,7 +44,7 @@ const Footer = () => {
               {/* Content */}
               <h6 className="text-uppercase fw-bold mb-4">
                 <i className="fas fa-gem me-3" />
-                Company name
+                WEBCHEF
               </h6>
               <p>
                 
@@ -128,15 +128,7 @@ const Footer = () => {
       </section>
       {/* Section: Links  */}
       {/* Copyright */}
-      <div
-        className="text-center p-4"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-      >
-        © 2021 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-          MDBootstrap.com
-        </a>
-      </div>
+      
       {/* Copyright */}
     </footer>
   );
