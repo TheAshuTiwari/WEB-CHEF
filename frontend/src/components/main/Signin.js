@@ -41,7 +41,7 @@ const Signin = () => {
           navigate('/admin/dashboard');
         } else {
           sessionStorage.setItem('user', JSON.stringify(data));
-          navigate('/user/profile');
+          navigate('/user/generatedesign');
         }
       } else {
         Swal.fire({
@@ -77,7 +77,7 @@ const Signin = () => {
                       <input type="password" id="password" onChange={loginform.handleChange} value={loginform.values.password} className="form-control form-control-lg" />
                     </div>
                     <p className="small mb-5 pb-lg-2">
-                      <a className="text-white-50" href="#!">
+                      <a className="" href="#!">
                         Forgot password?
                       </a>
                     </p>
@@ -85,13 +85,13 @@ const Signin = () => {
                       Login
                     </button>
                     <div className="d-flex justify-content-center text-center mt-4 pt-1">
-                      <a href="#!" className="text-white">
+                      <a href="#!" className="">
                         <i className="fab fa-facebook-f fa-lg" />
                       </a>
-                      <a href="#!" className="text-white">
+                      <a href="#!" className="">
                         <i className="fab fa-twitter fa-lg mx-4 px-2" />
                       </a>
-                      <a href="#!" className="text-white">
+                      <a href="#!" className="">
                         <i className="fab fa-google fa-lg" />
                       </a>
                     </div>
