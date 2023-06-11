@@ -33,6 +33,14 @@ const DesignGenerator = () => {
         setResult(webpages.page1)
       }else if(file.name === 'Capture2.png') {
         setResult(webpages.page2)
+      }else if(file.name === 'Capture3.png') {
+        setResult(webpages.page3)
+      }else if(file.name === 'Capture4.png') {
+        setResult(webpages.page4)
+      }else if(file.name === 'Capture5.jpg') {
+        setResult(webpages.page5)
+      }else if(file.name === 'Capture6.jpg') {
+        setResult(webpages.page6)
       }
       setLoading(false);
     }, 1000);
