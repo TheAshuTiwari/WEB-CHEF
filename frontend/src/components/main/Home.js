@@ -48,7 +48,7 @@ const Home = () => {
                           </span>{" "}
                           <br /> <span className="" />{" "}
                         </h1>{" "}
-                        <a
+                        {/* <a
                           className="btn                 btn-light btn-lg py-3 px-5 me-2"
                           href="#!"
                           role="button"
@@ -57,7 +57,7 @@ const Home = () => {
                           style={{}}
                         >
                           Get started
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>
