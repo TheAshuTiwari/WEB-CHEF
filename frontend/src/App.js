@@ -1,31 +1,27 @@
-import "./App.css";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Admin from "./components/admin";
-import Main from "./components/main";
-import Signin from "./components/main/Signin";
-import Signup from "./components/main/Signup";
-import Home from "./components/main/Home";
-import UserAuth from "./auth/UserAuth";
-import User from "./components/user";
-import UserProfile from "./components/user/UserProfile";
-import AdminProfile from "./components/admin/AdminProfile";
-import NotFound from "./components/NotFound";
-import Contact from "./components/main/Contact";
-import About from "./components/main/About";
-import AdminAuth from "./auth/AdminAuth";
-import UserProvider from "./context/UserProvider";
-import AdminProvider from "./context/AdminProvider";
-import { useState } from "react";
-import DesignGenerator from "./components/user/DesignGenerator";
+import './App.css';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import Admin from './components/admin';
+import Main from './components/main';
+import Signin from './components/main/Signin';
+import Signup from './components/main/Signup';
+import Home from './components/main/Home';
+import UserAuth from './auth/UserAuth';
+import User from './components/user';
+import UserProfile from './components/user/UserProfile';
+import AdminProfile from './components/admin/AdminProfile';
+import NotFound from './components/NotFound';
+import Contact from './components/main/Contact';
+import About from './components/main/About';
+import AdminAuth from './auth/AdminAuth';
+import UserProvider from './context/UserProvider';
+import AdminProvider from './context/AdminProvider';
+import { useState } from 'react';
+import DesignGenerator from './components/user/DesignGenerator';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(sessionStorage.getItem("user"))
-  );
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
-  const [currentAdmin, setCurrentAdmin] = useState(
-    JSON.parse(sessionStorage.getItem("admin"))
-  );
+  const [currentAdmin, setCurrentAdmin] = useState(JSON.parse(sessionStorage.getItem('admin')));
 
   return (
     <BrowserRouter>
@@ -35,9 +31,9 @@ function App() {
             <Route element={<Navigate to="/main/home" />} path="/" />
             <Route
               element={
-                // <AdminAuth>
-                // </AdminAuth>
-                <Admin />
+                <AdminAuth>
+                  <Admin />
+                </AdminAuth>
               }
               path="admin"
             >
@@ -54,9 +50,9 @@ function App() {
 
             <Route
               element={
-               // <UserAuth>
+                <UserAuth>
                   <User />
-                //</UserAuth>
+                </UserAuth>
               }
               path="user"
             >
