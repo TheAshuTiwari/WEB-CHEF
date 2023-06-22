@@ -78,11 +78,6 @@ const Header = () => {
                   Contact Page
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/dashboard">
-                  Dashboard
-                </NavLink>
-              </li>
             </ul>
             {/* Left links */}
           </div>

@@ -6,11 +6,11 @@ import Sidebar from './Sidebar'
 
 const Admin = () => {
   return (
-    <div className='module'>
+    <div className=''>
         <Header />
         <Sidebar />
         <Outlet/>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

@@ -41,7 +41,7 @@
   /* General sidebar styles */
   .bm-menu {
     padding-top: 50px;
-    background: #000207;
+    background-image: linear-gradient(to bottom, rgb(43, 0, 80), black);
     /* padding: 2.5em 1.5em 0; */
     font-size: 1.15em;
     border-right: 1px solid white;

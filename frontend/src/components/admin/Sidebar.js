@@ -7,17 +7,17 @@ const Sidebar = () => {
   return (
     <Menu>
       <div className="sidebar-item">
-        <NavLink id="profile" className="menu-item" to="/user/profile">
+        <NavLink id="profile" className="menu-item" to="/admin/profile">
           Admin Profile
         </NavLink>
       </div>
       <div className="sidebar-item">
-        <NavLink id="profile" className="menu-item" to="/user/configure">
+        <NavLink id="profile" className="menu-item" to="/admin/manageuser">
           Manage Users
         </NavLink>
       </div>
       <div className="sidebar-item">
-        <NavLink id="profile" className="menu-item" to="/user/addentity">
+        <NavLink id="profile" className="menu-item" to="/admin/dashboard">
           View Dashboard 
         </NavLink>
       </div>
