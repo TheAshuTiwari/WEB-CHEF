@@ -13,7 +13,7 @@ const ManageUser = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setUserList(data); // set the data fetched the userList Variable
+        setUserList(data.result); // set the data fetched the userList Variable
         setLoading(false); // set loading to false when data is fetched
         // 200ms
       });

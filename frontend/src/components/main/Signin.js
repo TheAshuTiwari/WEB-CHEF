@@ -38,7 +38,7 @@ const Signin = () => {
         setLoggedIn(true);
         if (data.role === 'admin') {
           sessionStorage.setItem('admin', JSON.stringify(data));
-          navigate('/admin/dashboard');
+          navigate('/admin/manageuser');
         } else {
           sessionStorage.setItem('user', JSON.stringify(data));
           navigate('/user/generatedesign');

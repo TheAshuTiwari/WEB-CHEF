@@ -11,7 +11,7 @@ const Signup = () => {
 
   const signupForm = async (formdata, { resetForm }) => {
     console.log(formdata);
-    formdata.role = 'admin';
+    // formdata.role = 'admin';
     const res = await fetch(`${url}/user/add`, {
       method: 'POST',
       body: JSON.stringify(formdata),
