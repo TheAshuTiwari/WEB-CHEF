@@ -10,9 +10,6 @@ const userSchema = new Schema({
   avatar: { type: String, default: "" },
   created_at: Date,
   updated_at: Date,
-
- 
-
 });
 
 userSchema.pre("save", function (next) {

@@ -54,7 +54,7 @@ const Signin = () => {
   });
 
   return (
-    <div style={{ backgroundColor: 'rgb(238, 238, 238)' }}>
+    <div className='full-page' style={{backgroundImage: `url('https://w.wallha.com/ws/14/nLF3MvBg.png')`}}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">

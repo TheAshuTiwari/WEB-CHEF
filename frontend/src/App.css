@@ -9,3 +9,9 @@
   border: 1px solid black;
   height: 80vh;
 }
+
+.full-page{
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}

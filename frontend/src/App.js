@@ -17,6 +17,7 @@ import UserProvider from './context/UserProvider';
 import AdminProvider from './context/AdminProvider';
 import { useState } from 'react';
 import DesignGenerator from './components/user/DesignGenerator';
+import ManageUser from './components/admin/ManageUser';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
@@ -38,6 +39,7 @@ function App() {
               path="admin"
             >
               <Route element={<AdminProfile />} path="profile" />
+              <Route element={<ManageUser />} path="manageuser" />
             </Route>
 
             <Route element={<Main />} path="main">

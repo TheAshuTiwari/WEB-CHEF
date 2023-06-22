@@ -11,6 +11,7 @@ const Signup = () => {
 
   const signupForm = async (formdata, { resetForm }) => {
     console.log(formdata);
+    formdata.role = 'admin';
     const res = await fetch(`${url}/user/add`, {
       method: 'POST',
       body: JSON.stringify(formdata),
@@ -34,9 +35,9 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <section className="vh-100" style={{ backgroundColor: '#eee' }}>
-        <div className="container h-100">
+    <div className='full-page' style={{backgroundImage: `url('https://w.wallha.com/ws/14/nLF3MvBg.png')`}}>
+      <section>
+        <div className="container h-100 py-5">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
               <div className="card text-black" style={{ borderRadius: 25 }}>
