@@ -25,7 +25,7 @@ const ManageUser = () => {
       .then((data) => {
         console.log(data);
         fetchData();
-        toast("Successfully deleted the User!!", { icon: "💀" });
+        toast.success("Successfully deleted the User!!");
       });
   };
 
@@ -57,7 +57,9 @@ const ManageUser = () => {
   return (
     <div className="container">
       <Toaster position="top-right" />
-      <h1 className="text-center">ManageUsers</h1>
+      <h1 className="text-center text-white display-1 fw-bold p-5">
+        Manage Users
+      </h1>
 
       <table className="table table-dark">
         <thead>

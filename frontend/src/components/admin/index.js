@@ -6,7 +6,7 @@ import Sidebar from './Sidebar'
 
 const Admin = () => {
   return (
-    <div className=''>
+    <div className='' style={{minHeight: '100vh', backgroundImage: `url('https://wallpaperaccess.com/full/16676.jpg')`}}>
         <Header />
         <Sidebar />
         <Outlet/>

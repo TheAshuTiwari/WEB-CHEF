@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import app_config from '../../config';
+import { toast } from 'react-hot-toast';
 
 const DesignGenerator = () => {
   const url = app_config.apiurl;
@@ -29,22 +30,22 @@ const DesignGenerator = () => {
     setLoading(true);
     const file = e.target.files[0];
     setTimeout(() => {
-      if(file.name === 'Capture1.png') {
-        setResult(webpages.page1)
-      }else if(file.name === 'Capture2.png') {
-        setResult(webpages.page2)
-      }else if(file.name === 'Capture3.png') {
-        setResult(webpages.page3)
-      }else if(file.name === 'Capture4.png') {
-        setResult(webpages.page4)
-      }else if(file.name === 'Capture5.jpg') {
-        setResult(webpages.page5)
-      }else if(file.name === 'Capture6.jpg') {
-        setResult(webpages.page6)
+      if (file.name === 'Capture1.png') {
+        setResult(webpages.page1);
+      } else if (file.name === 'Capture2.png') {
+        setResult(webpages.page2);
+      } else if (file.name === 'Capture3.png') {
+        setResult(webpages.page3);
+      } else if (file.name === 'Capture4.png') {
+        setResult(webpages.page4);
+      } else if (file.name === 'Capture5.jpg') {
+        setResult(webpages.page5);
+      } else if (file.name === 'Capture6.jpg') {
+        setResult(webpages.page6);
       }
       setLoading(false);
     }, 1000);
-    
+
     var reader = new FileReader();
     reader.onload = function (e) {
       var image = new Image(); // Create an <img> element
@@ -122,9 +123,22 @@ const DesignGenerator = () => {
               <div className="col-md-6">{selImage && <img className="img-fluid" src={selImage} alt="" />}</div>
               <div className="col-md-6">
                 {loading && <img style={{ display: 'block', margin: 'auto' }} alt="" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" />}
-                {
-                  result && <p>{result}</p>
-                }
+                {result && (
+                  <>
+                    <button
+                      className="btn btn-dark"
+                      onClick={() => {
+                        // copy to clipboard
+                        navigator.clipboard.writeText(result);
+                        toast.success('Copied to clipboard');
+                      }}
+                    >
+                      {' '}
+                      <i class="fas fa-copy"></i> Copy Code{' '}
+                    </button>
+                    <p>{result}</p>
+                  </>
+                )}
               </div>
             </div>
           </div>

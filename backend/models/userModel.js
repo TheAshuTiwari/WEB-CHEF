@@ -8,7 +8,7 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   role: { type: String, default: 'user' },
   avatar: { type: String, default: "" },
-  created_at: Date,
+  created_at: {type : Date, default: new Date()},
   updated_at: Date,
 });
 
